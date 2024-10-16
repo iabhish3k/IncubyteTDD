@@ -41,4 +41,14 @@ describe('String Calculator - Add Method', () => {
     it('should ignore numbers greater than 1000', () => {
         expect(Add("1001,2")).toBe(2);
     });
+
+    it('should support multi-character delimiters', () => {
+        expect(Add("//[***]\n1***2***3")).toBe(6);
+    });
+    
+    it('should support multiple delimiters', () => {
+        expect(Add("//[*][%]\n1*2%3")).toBe(6);
+    });
+
+    
 });
