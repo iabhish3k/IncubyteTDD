@@ -31,4 +31,10 @@ describe('String Calculator - Add Method', () => {
     it('should support custom delimiters', () => {
         expect(Add("//;\n1;2;3")).toBe(6);
     });
+
+    // Test case for throwing an error when negative numbers are included
+    it('should throw an error for negative numbers', () => {
+        expect(() => Add("1,-2,3")).toThrow("Negative numbers not allowed: -2");
+    });
+
 });
