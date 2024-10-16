@@ -16,9 +16,15 @@ describe('String Calculator - Add Method', () => {
     it('should return the sum of two numbers when passed', () => {
         expect(Add("3,7")).toBe(10);
     });
-    
+
     // Test case for validating the addition of multiple comma-separated numbers
     it('should return the sum of multiple numbers', () => {
         expect(Add("1,2,3,4")).toBe(10);
     });
+
+    // Test case for handling new lines as valid delimiters
+    it('should handle new lines as valid delimiters', () => {
+        expect(Add("1\n2,3")).toBe(6);
+    });
+    
 });
